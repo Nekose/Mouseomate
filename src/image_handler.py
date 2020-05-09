@@ -1,4 +1,4 @@
-from PIL import Image
+from PIL import Image, ImageFilter
 import numpy as np
 
 
@@ -12,7 +12,10 @@ class Image_handler(object):
         return path
 
     def convert_bandw(self) -> None:
-        self.im = self.im.convert(mode='1')
+        self.im = self.im.convert(mode='1',dither=None)
+
+    def blur_image(self):
+        self.im = self.im.filter(filter=ImageFilter.BoxBlur(1))
 
 
     def resize(self,value:int) -> None:
