@@ -1,5 +1,6 @@
 import numpy
 import pyautogui
+import time
 class Mouseomate(object):
     pyautogui.PAUSE = 0.00 #useful
     pyautogui.FAILSAFE = True
@@ -19,17 +20,16 @@ class Mouseomate(object):
             xoffset = 0
             for value in row:
                 if value == False:
-                    pyautogui.click(interval=.03)
-                    startpositionx += offset
                     pyautogui.moveTo(startpositionx, startpositiony, duration=0)
+                    pyautogui.click(interval=0)
+                    startpositionx += offset
                     xoffset += offset
                 elif value == True:
                     startpositionx += offset
-                    pyautogui.moveTo(startpositionx, startpositiony, duration=0)
                     xoffset += offset
             startpositiony += offset
             startpositionx -= xoffset
-            pyautogui.moveRel(startpositionx, startpositiony, duration=0)
+            time.sleep(.07)
 
 
 

@@ -1,4 +1,4 @@
-from PIL import Image, ImageFilter
+from PIL import Image, ImageFilter, ImageOps
 import numpy as np
 
 
@@ -22,6 +22,13 @@ class Image_handler(object):
         :return:
         """
         self.im = self.im.convert(mode='1',dither=None)
+
+    def invert(self,image) -> None:
+        """
+        Returns a color inverted image file
+        :return:
+        """
+        self.im = ImageOps.invert(Image.open(image))
 
     def resize(self,value:int) -> None:
         """
