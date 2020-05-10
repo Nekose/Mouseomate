@@ -18,18 +18,26 @@ class Mouseomate(object):
         startpositionx,startpositiony = pyautogui.position()
         for row in image_array:
             xoffset = 0
+            alreadydrawing = False
             for value in row:
-                if value == False:
-                    pyautogui.moveTo(startpositionx, startpositiony, duration=0)
-                    pyautogui.click(interval=0)
-                    startpositionx += offset
-                    xoffset += offset
-                elif value == True:
-                    startpositionx += offset
-                    xoffset += offset
+                if value == False: #Need to draw
+                    if alreadydrawing == True:
+                        xoffset += offset
+                    else:
+                        startline = startpositionx + xoffset
+                        alreadydrawing = True
+                        xoffset += offset
+                if value == True: #End of line
+                    if alreadydrawing == False:
+                        xoffset += offset
+                    else:
+                        pyautogui.moveTo(startline,startpositiony)
+                        pyautogui.dragTo(startpositionx + xoffset, startpositiony, button = 'left')
+                        alreadydrawing = False
+                        xoffset += offset
+            time.sleep(.025)
             startpositiony += offset
-            startpositionx -= xoffset
-            time.sleep(.07)
+
 
 
 
