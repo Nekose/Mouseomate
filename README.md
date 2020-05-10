@@ -1,4 +1,4 @@
-Mouseomate V0.5
+Mouseomate V0.6
 By Nekose
 
 
