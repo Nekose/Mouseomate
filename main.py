@@ -10,7 +10,7 @@ rsleep = 0.025 #adujust this to change pause time at end of row (recommend .025)
 imagename = Image_handler.get_image()
 handler = Image_handler(imagename)
 resizevalue = int(input("What is the approximate pixel size of the input field?"))
-offset = int(input("What is the approximate brush size in pixels? (1 for one to one drawing"))
+offset = int(input("What is the approximate brush size in pixels? (1 for one to one drawing)"))
 resizevalue = resizevalue / offset
 handler.convert_bandw()
 handler.resize(resizevalue)
