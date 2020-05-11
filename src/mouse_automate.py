@@ -6,13 +6,17 @@ class Mouseomate(object):
     pyautogui.FAILSAFE = True
 
     @staticmethod
-    def image_to_clicks(image_array: numpy.array,offset:int) -> None:
+    def image_to_lines(image_array: numpy.array, offset:int, rsleep:int, lsleep:int) -> None:
         """
         Converts an image array to mouseclicks.
         :param image_array:
         A numpy array of bools, where False represents a click, and True represents no click.
         :param offset:
         An int which provides spacing between each pixel in image_array. Usefull to adjust for brush size used in whatever this will be outputting for.
+        :param rlseep:
+        int which designates how long in second the mouse will take drawing a line
+        :param rsleep:
+        int which designates how long in seconds to pause at end of row
         :return:
         """
         startpositionx,startpositiony = pyautogui.position()
@@ -32,11 +36,18 @@ class Mouseomate(object):
                         xoffset += offset
                     else:
                         pyautogui.moveTo(startline,startpositiony)
-                        pyautogui.dragTo(startpositionx + xoffset, startpositiony, button = 'left')
+                        pyautogui.dragTo(startpositionx + xoffset, startpositiony,duration=lsleep, button = 'left')
+                        time.sleep(lsleep)
                         alreadydrawing = False
                         xoffset += offset
-            time.sleep(.025)
+            if value == False:
+                if alreadydrawing == True:
+                    pyautogui.moveTo(startline, startpositiony)
+                    pyautogui.dragTo(startpositionx + xoffset, startpositiony, duration=lsleep, button ='left')
+                    time.sleep(lsleep)
+                    xoffset += offset
             startpositiony += offset
+            time.sleep(rsleep)
 
 
 
