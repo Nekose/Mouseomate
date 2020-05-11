@@ -20,9 +20,10 @@ returnkey = None
 while returnkey == None:
     print("Preview image loaded. Enter to begin 3 second countdown to start, N to abort. Once image has started, pulling mouse to the upper left corner will abort the program.")
     returnkey = input()
-    if returnkey == 'N' or returnkey =='n':
+    returnkey = returnkey.lower()
+    if returnkey == 'n':
         exit()
-    if returnkey == "I" or returnkey =="i":
+    if returnkey == 'i':
         handler.invert(imagename)
         handler.convert_bandw()
         resizevalue = resizevalue / offset
@@ -33,10 +34,11 @@ while returnkey == None:
 time.sleep(3)
 array = handler.update_array()
 Mouseomate.image_to_lines(array, offset, rsleep, lsleep)
-repeat = 'Y'
-while repeat == 'Y':
+repeat = 'y'
+while repeat == 'y':
     repeat = input("Y to redraw after 3 sec pause, or enter to exit")
-    if repeat == 'y' or repeat == 'Y':
+    repeat = repeat.lower()
+    if repeat == 'y':
         time.sleep(3)
         Mouseomate.image_to_lines(array, offset, rsleep, lsleep)
     else:
