@@ -23,7 +23,7 @@ Required Modules:
 * Pillow (Image processing and manipulation)
 
 Known issues:
-* Output speed appears to be limited by the windows input buffer. You may need to wait till the program finishes running before the image apppears.
+* Output speed appears to be limited by the windows input buffer. You may need to wait till the program finishes running before the image apppears. If you have CPU speed issues, you can try increasing "lsleep" and "rsleep" values at the top of main.py.
 
 To Do:
 * investigate better drawing algorithms (Line tracing with cv2.HoughLinesP()?)
