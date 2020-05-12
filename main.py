@@ -25,7 +25,7 @@ handler.resize(resizevalue)
 handler.im.show()
 returnkey = None
 while returnkey == None:
-    print("Preview image loaded. Enter to begin 3 second countdown to start, N to abort. Once image has started, pulling mouse to the upper left corner will abort the program.")
+    print("Preview image loaded. Enter to begin 3 second countdown to start, N to abort. Once image has started, pulling mouse to any corner will abort the program.")
     returnkey = input()
     returnkey = returnkey.lower()
     if returnkey == 'n':
