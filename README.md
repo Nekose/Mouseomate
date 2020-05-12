@@ -2,7 +2,20 @@ Mouseomate V0.65
 By Nekose
 
 
-To use, run main.py with the image you would like to draw inside the 'images' folder. Images should ideally be vector-like, with limited shading or colorpallet (Although the program will attempt to monochrome any image given).
+To use, run main.py. The image you would like to draw must be inside the 'images' folder. Images should ideally be vector-like, with limited shading or colorpallet (Although the program will attempt to monochrome any image given).
+
+***
+Example Of Use:
+
+what is the filename of the image?> mona.jpg
+
+What is the approximate pixel size you would like to output?> 500
+
+What is the approximate brush size in pixels? (Use 1 for one to one drawing)>? 1
+
+Preview image loaded. Enter to begin 3 second countdown to start, N to abort. Once image has started, pulling mouse to the upper left corner will abort the program.
+
+***
 
 Required Modules:
 * PyAutoGUI (maps mouse controls)
