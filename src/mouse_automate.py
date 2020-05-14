@@ -24,14 +24,14 @@ class Mouseomate(object):
             xoffset = 0
             alreadydrawing = False
             for value in row:
-                if value == False: #Need to draw
+                if not value.all(): #Need to draw
                     if alreadydrawing == True:
                         xoffset += offset
                     else:
                         startline = startpositionx + xoffset
                         alreadydrawing = True
                         xoffset += offset
-                if value == True: #End of line
+                if value.all(): #End of line
                     if alreadydrawing == False:
                         xoffset += offset
                     else:
@@ -40,7 +40,7 @@ class Mouseomate(object):
                         time.sleep(lsleep)
                         alreadydrawing = False
                         xoffset += offset
-            if value == False:
+            if not value.all():
                 if alreadydrawing == True:
                     pyautogui.moveTo(startline, startpositiony)
                     pyautogui.dragTo(startpositionx + xoffset, startpositiony, duration=lsleep, button ='left')

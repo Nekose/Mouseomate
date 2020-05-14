@@ -1,6 +1,6 @@
 from PIL import Image, ImageFilter, ImageOps
 import numpy as np
-
+from easygui import fileopenbox
 
 class Image_handler(object):
     def __init__(self,image):
@@ -9,11 +9,11 @@ class Image_handler(object):
     @staticmethod
     def get_image() -> str:
         """
-        Ask's users the name of the file to be used
+        Ask's users fir file to be used
         :return:
-        a string of the file name
+        a string of the file path
         """
-        path = input("what is the filename of the image?")
+        path = fileopenbox()
         return path
 
     def convert_bandw(self) -> None:
