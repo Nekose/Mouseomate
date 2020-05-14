@@ -1,6 +1,7 @@
 import time
 import sys
 import os
+from easygui import multenterbox
 
 cwd = os.getcwd()
 sys.path.append(cwd+'/src')
@@ -16,8 +17,10 @@ lsleep = 0.005 #adujust this to change pause time at end of line (recommend .002
 rsleep = 0.025 #adujust this to change pause time at end of row (recommend .025)
 imagename = Image_handler.get_image()
 handler = Image_handler(imagename)
-resizevalue = int(input("What is the approximate pixel size you would like to output?"))
-offset = int(input("What is the approximate brush size in pixels? (1 for one to one drawing)"))
+message = "Resizevalue: What is the approximate pixel size you would like to output?\nOffset: What is the approximate brush size in pixels? (1 for one to one drawing)"
+resizevalue, offset = multenterbox(message,"Mouseomate", ["Resizevalue","Offset"])
+resizevalue = int(resizevalue) if resizevalue else 100
+offset = int(offset) if offset else 1
 resizevalue = resizevalue / offset
 handler.convert_bandw()
 handler.resize(resizevalue)
