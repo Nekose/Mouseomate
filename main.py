@@ -25,7 +25,7 @@ resizevalue, offset = multenterbox(message,"Mouseomate", ["Resizevalue","Offset"
 resizevalue = int(resizevalue) if resizevalue else 100
 offset = int(offset) if offset else 1
 resizevalue = resizevalue / offset
-handler.convert_bandw()
+handler.convert_bandw(mode)
 handler.resize(resizevalue)
 	
 handler.im.show()
@@ -38,7 +38,7 @@ while returnkey == None:
 		exit()
 	if returnkey == 'i':
 		handler.invert(imagename)
-		handler.convert_bandw()
+		handler.convert_bandw(mode)
 		resizevalue = resizevalue / offset
 		handler.resize(resizevalue)
 		handler.im.show()

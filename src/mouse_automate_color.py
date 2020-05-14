@@ -22,7 +22,7 @@ def change_color(color,app):
 	if color == (255, 105, 180): #Failsafe, needs to be reworked, this should only be temporary
 		i = 0
 	else:
-		i = palette[app].index(color)
+		i = palette[app][0].index(color)
 		
 	if app == "paint": 
 		"""
