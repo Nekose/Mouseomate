@@ -22,11 +22,6 @@ Preview image loaded. Enter to begin 3 second countdown to start, N to abort. On
 
 ***
 
-Required Modules:
-* PyAutoGUI (maps mouse controls)
-* numpy (creation of image array)
-* Pillow (Image processing and manipulation)
-
 Known issues:
 * Output speed appears to be limited by the windows input buffer. You may need to wait till the program finishes running before the image apppears. If you have CPU speed issues, you can try increasing "lsleep" and "rsleep" values at the top of main.py.
 
