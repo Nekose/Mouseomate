@@ -1,7 +1,7 @@
 Mouseomate V0.7
 By Nekose
 
-Contributions by Qaudrum1 and Logistic-bot
+Contributions by Quadrum1 and Logistic-bot
 
 
 To use, run main.py. The image you would like to draw must be inside the 'images' folder. Images should ideally be vector-like, with limited shading or colorpallet (Although the program will attempt to monochrome any image given).
