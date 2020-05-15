@@ -1,10 +1,14 @@
-Mouseomate V0.7
+Mouseomate V0.8, Now with Color!
 By Nekose
 
-Contributions by Quadrum1 and Logistic-bot
+Color Implementation by Quadrum1, formating contributions by Logistic-bot
 
 
-To use, run main.py. The image you would like to draw must be inside the 'images' folder. Images should ideally be vector-like, with limited shading or colorpallet (Although the program will attempt to monochrome any image given).
+To use, run main.py. The image you would like to draw must be inside the 'images' folder. 
+
+To switch between color or BW, change the mode variable near the top of main. If using color, specify the program you would like to draw with to specify color controls. (currently only supports MS Paint)
+
+If running in black and white, images should ideally be vector-like, with limited shading or colorpallet (Although the program will attempt to monochrome any image given).
 
 ***
 Example Of Use:
