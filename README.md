@@ -1,7 +1,10 @@
 Mouseomate V0.8, Now with Color!
-By Nekose
 
-Color Implementation by Quadrum1, formating contributions by Logistic-bot
+Original Code by Nekose
+
+Color Implementation and GUI by Quadrum1
+
+formating contributions by Logistic-bot
 
 
 To use, run main.py. The image you would like to draw must be inside the 'images' folder. 
