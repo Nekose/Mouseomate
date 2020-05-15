@@ -10,7 +10,7 @@ from image_handler import Image_handler
 from mouse_automate_black import Mouseomate as Mouseomate_black
 from mouse_automate_color import Mouseomate as Mouseomate_color
 
-mode = "color" # "color", "black"
+mode = "black" # "color", "black"
 app = "paint" # What application are you drawing with?
 
 os.chdir("images")
