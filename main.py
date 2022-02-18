@@ -16,7 +16,7 @@ app = "paint" # What application are you drawing with?
 os.chdir("images")
 
 
-lsleep = 0.005 #adujust this to change pause time at end of line (recommend .002)
+lsleep = 0.002 #adujust this to change pause time at end of line (recommend .002)
 rsleep = 0.025 #adujust this to change pause time at end of row (recommend .025)
 imagename = Image_handler.get_image()
 handler = Image_handler(imagename)
