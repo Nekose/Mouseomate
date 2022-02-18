@@ -12,3 +12,4 @@ python-dateutil==2.8.1
 PyTweening==1.0.3
 pytz==2020.1
 six==1.14.0
+easygui==0.98.1
