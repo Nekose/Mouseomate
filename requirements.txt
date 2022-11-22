@@ -1,7 +1,7 @@
 MouseInfo==0.1.3
 numpy==1.22.0
 pandas==1.0.3
-Pillow==9.0.1
+Pillow==9.3.0
 PyAutoGUI==0.9.50
 PyGetWindow==0.0.8
 PyMsgBox==1.0.7
